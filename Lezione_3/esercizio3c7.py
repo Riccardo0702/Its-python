@@ -15,7 +15,7 @@ while moneta <= 8:
 print(f"Testa è uscito {testa} volte!")
 print(f"Croce è uscito {croce} volte!")
 
-percentuale_testa = testa/8*100
-percentuale_croce = croce/8*100
-print(f"La percentuale delle volte che è uscito testa è: {percentuale_testa}%")
-print(f"La percentuale delle volte che è uscito croce è: {percentuale_croce}%")
+percentuale_testa = (testa/8)*100
+percentuale_croce = (croce/8)*100
+print(f"La percentuale delle volte che è uscito testa è: {percentuale_testa:.2f}%")
+print(f"La percentuale delle volte che è uscito croce è: {percentuale_croce:.2f}%")
