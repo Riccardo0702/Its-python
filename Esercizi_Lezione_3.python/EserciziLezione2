@@ -1,0 +1,127 @@
+#esercizio 3-1
+#names = ["Rebecca", "Rachele", "Alessio", "Riccardo"]
+#print(*names, sep = "\n")
+
+#Esercizio 3-2
+#message =  "Ciao, io sono "
+
+#for name in names:
+#    print(f"{message} {name}")
+
+#Esercizio 3-3
+#transportation = ["Tesla", "Ferrari", "Porche"]
+#message1 = "I want a grey"
+#message2 = "I want a red"
+#message3 = "I want a black"
+
+#print(f"{message1} {transportation[0]}\n{message2} {transportation[1]}\n{message3} {transportation[2]}" )
+
+#Esercizio 3-4
+#guest = ["Rebecca", "Alessio", "Riccardo"]
+#invite = "Would you like to have a dinner with me?"
+
+#for friends in guest:
+#    print(f"{friends}, {invite}")
+    
+#Esercizio 3-5
+#newguest = "Riccardo couldn't make it so:"
+
+#guest[2] = "Ilaria"
+  
+#print(newguest)
+#for friends in guest:
+#    print(f"{friends}, {invite}")
+    
+#Esercizio 3-6 
+#guest.insert(0, "Krys")
+#guest.insert(1, "Danilo")
+#guest.append("Luca")
+
+#newinformation = "The table that I found is more big, so I invite:"
+
+#print(newinformation)
+#for friends in guest:
+#    print(f"{friends} {invite}")
+    
+#Esercizio 3-7
+#newmessage = "I can invite only two people for dinner"
+
+#print (newmessage)
+
+#guest.pop(0)
+#guest.pop(2)
+#guest.pop(2)
+#guest.pop(2)
+
+#name = guest.pop(0)
+#name1 = guest.pop(2)
+#name2 = guest.pop(2)
+#name3 = guest.pop(2)
+
+#newmessage2 = "I'm sorry, I can't invite you"
+#print(f"{newmessage2} {guest[0]}\n{newmessage2} {guest[3]}\n{newmessage2} {guest[4]}\n{newmessage2} {guest[5]}")
+
+#newmessage3 = "You are still on my list, so you're invited"
+#print(f"{guest[0]} {newmessage3}\n{guest[1]} {newmessage3}")
+
+#del guest [0]
+#del guest [0]
+
+#print(guest)
+
+#Esercizio 3-8
+#worldplace = ["USA", "Switzerland", "Japan", "Sud Korea", "Iceland"]
+#print(worldplace)
+
+#wp = sorted(worldplace)
+#print (*wp)
+#print (*wp [::-1])
+#print(*worldplace)
+
+#worldplace.reverse()
+#print(*worldplace)
+
+#worldplace.reverse()
+#print(*worldplace)
+
+#worldplace.sort()
+#print(*worldplace)
+
+#worldplace.sort(reverse = True)
+#print (*worldplace)
+
+#Esercizio 3-9
+#guest = ["Rebecca", "Alessio", "Riccardo"]
+#print (len (guest))
+#messageforall = "The numbers of the guests is"
+#print (f"{messageforall} {len (guest)}")
+
+#Esercizio 3-10
+#Ilike = ["Books", "Nature", "Animals", "Astronomy", "Juventus", "Fortine", "Sunflower", "Travel"]
+#print (*Ilike, sep = "\n")
+
+
+#Ilike.insert(3, "Food")
+#print(*Ilike)
+
+#Ilike.append("Marvel")
+#print(*Ilike)
+
+#Ilike.pop(3)
+#print(*Ilike)
+
+#del Ilike [5]
+#print(*Ilike)
+
+#Ilike1 = sorted (Ilike)
+#print(*Ilike1)
+#print (*Ilike [::-1])
+
+#Ilike.reverse()
+#print(*Ilike)
+
+#Ilike.sort()
+#print(*Ilike)
+
+#Ilike.sort(reverse = True)
+#print(*Ilike)
