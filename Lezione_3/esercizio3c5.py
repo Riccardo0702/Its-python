@@ -29,27 +29,27 @@ match ruolo:
     case _:
         print("Attenzione! Ruolo non riconsciuto! Accesso Negato!")'''
 
-utente = {}
-utente_nome = str(input("Inserisci nome: "))
-utente_ruolo = str(input("Inserisci ruolo: "))
-utente_età = int(input("Inserisci l'età: "))
+utente: dict= { "nome":str(input("Inserire il nome utente: ")), "ruolo" : str(input("Inserire il ruolo: ")), "età" : int(input("Inserite l'età: "))} 
 
-utente["nome"] = utente_nome
-utente["ruolo"] = utente_ruolo
-utente["età"] = utente_età
+match utente:
 
-match utente_nome:
+
     case utente if utente["ruolo"] == "admin":
-        print(f"L'utente {utente} ha accesso completo a tutte le funzionalità.")
+        print("Accesso completo a tutte le funzionalità")
+    
     case utente if utente["ruolo"] == "moderatore":
-        print(f"L'utente {utente} può gestire i contenuti ma non modificare le impostazioni.")
+        print("Può gestire i contenuti ma non modificare le impostazioni")
+    
     case utente if utente["ruolo"] == "ospite":
-        print(f"L'utente {utente} accesso ristretto! Solo visualizzazione dei contenuti.")
-    case utente if utente["ruolo"] == "utente adulto" or utente["età"] >= 18:
-        print(f"L'utente {utente} ha accesso standard a tutti i servizi.")
-    case utente if utente["ruolo"]== "utente minorenne" or utente["età"] < 18:
-        print(f"L'utente {utente} ha accesso limitato! Alcune funzionalità sono bloccate.")
-    case _:
-        print("Attenzione! Ruolo non riconsciuto! Accesso Negato!")
+        print("Accesso ristretto! Solo visualizzazione dei contenuti")
+    
+    case utente if utente["ruolo"] != ["admin", "moderatore","ospite"]:
+        print ("Attenzione! Ruolo non riconsciuto! Accesso Negato!") 
+  
+    case utente if utente["età"] >= 18:
+        print("Accesso standard a tutti i servizi") 
+    
+    case utente if utente["età"] < 18:
+        print("Accesso limitato! Alcune funzionalità sono bloccate")
 
 
