@@ -36,7 +36,7 @@ class Aeroporto:
     _nome:str #noto alla nascità
 
     def __init__(self, codice:str, nome:str) -> None:
-        self.set_cosice(codice)
+        self.set_codice(codice)
         self.set_nome(nome)
 
     def codice(self) -> str:
