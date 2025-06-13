@@ -1,27 +1,27 @@
-def sum_primary_diagonal(matrix: list[list[int]]) -> int:
+def sum_diagonale1(matrice: list[list[int]]) -> int:
 
-    somma_diagonale_primaria: int = 0
-    position: int = 0
+    somma_diagonale1: int = 0
+    posizione: int = 0
 
-    for lista in matrix:
-        somma_diagonale_primaria += lista[position]
+    for lista in matrice:
+        somma_diagonale_primaria1 += lista[posizione]
         position += 1
 
-    print (somma_diagonale_primaria)
-    return somma_diagonale_primaria
+    print (somma_diagonale1)
+    return somma_diagonale1
 
-def sum_secondary_diagonal(matrix: list[list[int]]) -> int:
+def sum_diagonale2(matrice: list[list[int]]) -> int:
 
-    somma_diagonale_secondaria: int = 0
-    position: int = len(matrix) - 1
+    somma_diagonale_2: int = 0
+    posizione: int = len(matrice) - 1
 
-    for lista in matrix:
-        somma_diagonale_secondaria += lista[position]
+    for lista in matrice:
+        somma_diagonale_2 += lista[posizione]
         position -= 1
 
-    print (somma_diagonale_secondaria)
-    return somma_diagonale_secondaria
+    print (somma_diagonale_2)
+    return somma_diagonale_2
 
-sum_primary_diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-sum_secondary_diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+sum_diagonale1([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+sum_diagonale2([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 

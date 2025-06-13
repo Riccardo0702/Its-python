@@ -1,11 +1,11 @@
-def is_valid_ipv4(address: str) -> bool:
+def is_valid_ipv4(indirizzoip: str) -> bool:
 
-    parts_address: list[str] = address.split('.')
+    parts_indirizzoip: list[str] = indirizzoip.split('.')
 
-    if len(parts_address) > 4 or len(parts_address) < 4:
+    if len(parts_indirizzoip) > 4 or len(parts_indirizzoip) < 4:
         return False
     
-    for part in parts_address:
+    for part in parts_indirizzoip:
         
         if part.isdigit() == False:
             return False

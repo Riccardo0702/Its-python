@@ -1,18 +1,18 @@
-def merge_intervals(intervals: list[list[int]]):
+def merge_intervals(intervalli: list[list[int]]):
 
-    lista_nuova_intervalli: list = []
+    new_intervalli: list = []
 
-    for intervalli in intervals:
+    for intervallo in intervalli:
         intervallo_minore: int = 0
         intervallo_maggiore: int = 0
-        if intervalli[0] > intervallo_minore:
+        if intervallo[0] > intervallo_minore:
            
-           intervallo_minore = intervalli[0]
+           intervallo_minore = intervallo[0]
 
-           lista_nuova_intervalli.append(intervallo_minore)
+           new_intervalli.append(intervallo_minore)
 
-        elif intervalli[-1] > intervallo_maggiore:
+        elif intervallo[-1] > intervallo_maggiore:
 
-            intervallo_maggiore = intervalli[-1]
+            intervallo_maggiore = intervallo[-1]
 
-            lista_nuova_intervalli.append(intervallo_maggiore)
+            new_intervalli.append(intervallo_maggiore)
