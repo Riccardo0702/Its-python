@@ -88,6 +88,6 @@ class VideoRentalStore:
 
     def get_all_movies(self) -> list[Movie]:
         film_noleggiati: list[Movie] = []
-        for customer_id, customer in self.customers.items():
+        for _, customer in self.customers.items():
             film_noleggiati += customer.rented_movies
         return film_noleggiati
