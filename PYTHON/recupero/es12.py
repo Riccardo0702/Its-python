@@ -4,7 +4,7 @@ def sum_diagonale1(matrice: list[list[int]]) -> int:
     posizione: int = 0
 
     for lista in matrice:
-        somma_diagonale_primaria1 += lista[posizione]
+        somma_diagonale_1 += lista[posizione]
         position += 1
 
     print (somma_diagonale1)
