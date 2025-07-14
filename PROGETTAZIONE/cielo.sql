@@ -1,72 +1,61 @@
 begin transaction;
 
-set constraints all deferred;
+-- Creazione dei domini
 
-create domain posinteger as integer
-    check(value >= 0);
+create domain PosInteger as integer check (value >= 0);
 
-create domain stringam as varchar(100);
+create domain StringaM as varchar(100);
 
-create domain codIATA as chat(3);
+create domain CodIATA as
+  char(3);
 
-create table compagnia (
-    nome stringam primary key,
-    annofondaz posinteger
+
+-- Creazione dello schema relazionale
+
+create table Compagnia(
+  nome StringaM not null,
+  annoFondaz PosInteger null,
+  primary key (nome)
 );
 
-create table volo (
-    codice posinteger not null,
-    comp stringam not null,
-    primary key(codice, comp),
-    durataMinuti posinteger not null,
-    foreign key (comp)
-        references compagnia(nome)
-
-        --posticipo la definizione della foreign
-        --key (codice, comp) verso ArrPart per
-        -- evitare errori
+create table Aeroporto (
+  codice CodIATA not null,
+  nome StringaM not null,
+  primary key (codice)  
 );
 
-create table aeroporto(
-    codice codIATA primary key,
-    nome stringam not null,
-    --posticipo la definizione della fk
-    --verso luogoaeroporto, che ancora non esiste
+create table LuogoAeroporto (
+    aeroporto CodIATA not null,
+    citta StringaM not null,
+    nazione StringaM not null,
+    primary key (aeroporto),
+    foreign key (aeroporto) references Aeroporto(codice) deferrable
 );
 
-create table luogoaeroporto (
-    aeroporto codIATA primary key,
-    città stringam not null,
-    nazione stringam not null,
-    foreign key (aeroport)
-        references Aeroporto(codice) deferrable on delete cascade
+alter table Aeroporto
+add foreign key (codice) references LuogoAeroporto(aeroporto) deferrable;
+
+create table ArrPart (
+  codice PosInteger not null,
+  comp StringaM not null,
+  arrivo CodIATA not null,
+  partenza CodIATA not null,
+  primary key (codice, comp),
+  foreign key (arrivo) references Aeroporto(codice) deferrable,
+  foreign key (partenza) references Aeroporto(codice) deferrable
 );
 
-alter table aeroporto
-    add constraint aeroporto_luogoaeroporto_fk
-        foreign key (codice)
-            references luogoaeroporto(aeroporto) deferreable on delete cascade;
-
-
-
-create table arrpart (
-    codice posinteger not null,
-    comp stringam not null,
-    primary key (codice, comp),
-    foreign key (codice, comp)
-        references volo(codice, comp),
-    partenza codIATA not null,
-    arrivo codIATA not null,
-    foreign key (partenza)
-        references aeroporto(codice),
-    foreign key (arrivo)
-        references aeroporto(codice),
+create table Volo (
+  codice PosInteger not null,
+  comp StringaM not null,
+  durataMinuti PosInteger not null,
+  primary key (codice, comp),
+  foreign key (comp) references Compagnia(nome) deferrable,
+  foreign key (codice, comp) references ArrPart(codice, comp) deferrable
 );
 
---foreign key di volo, posticipata per evitare errori
-alter table volo
-    add constraint volo_arrpart_fk
-    foreign key (codice, comp)
-        references arrpart(codice, comp);
+alter table ArrPart
+add foreign key (codice, comp) references Volo(codice, comp) deferrable;
+
 
 commit;
